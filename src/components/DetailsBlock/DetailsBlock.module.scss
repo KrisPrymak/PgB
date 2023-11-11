@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    details {
+        margin: 10px;
+        width: 50%;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+  summary {
+    display: block;
+    background-color: #fff;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+}

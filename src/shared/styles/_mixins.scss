@@ -1,0 +1,9 @@
+@mixin forMobile() {
+  @media (orientation: portrait) and (max-width: 425px) {
+    @content;
+  }
+
+  @media (orientation: landscape) and (max-width: 896px) {
+    @content;
+  }
+}

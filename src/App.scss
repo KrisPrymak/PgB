@@ -1,0 +1,13 @@
+@import url('./shared/styles/variables.scss');
+// @import '@styles/_mixins.scss';
+@import './shared/styles/_mixins.scss';
+
+.App {
+  background-color: #F9F9FB;
+  padding: 10px;
+
+  @include forMobile {
+    background-color: beige;
+    padding: 5px;
+  }
+}

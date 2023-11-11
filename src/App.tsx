@@ -1,24 +1,59 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import { AppBar } from './components/AppBar/AppBar';
+// import { DetailsBlock } from './components/DetailsBlock/DetailsBlock';
+// import { Button } from './components/Button/Button';
+// import { CustomForm } from './components/CustomForm/CustomForm';
+// import { SignupForm } from './components/Formik';
+
+import {
+  AppBar,
+  Button,
+  CustomForm,
+  DetailsBlock,
+  SignupForm,
+  DataPicker,
+} from "./components";
+import "./App.scss";
+import QuillEditor from "./components/QuillEditor/QuillEditor";
+import { usePlatform } from "./shared/hooks";
+import { PlatformTypes } from "./shared/hooks/types";
+import { useEffect, useState } from "react";
+import { Scrollbar } from "react-scrollbars-custom";
+import { CardsContainer } from "./components/CardsContainer";
 
 function App() {
+  const platform = usePlatform();
+  const [toggleFeatureFlag, setToggleFeatureFlag] = useState(false);
+
+  //window.dispatchEvent(new CustomEvent('toggleFeatureFlag'))
+  useEffect(() => {
+    const handleToggleFeatureFlag = () =>
+      setToggleFeatureFlag(!toggleFeatureFlag);
+    window.addEventListener("toggleFeatureFlag", handleToggleFeatureFlag);
+
+    return () => {
+      window.removeEventListener("toggleFeatureFlag", handleToggleFeatureFlag);
+    };
+  }, [toggleFeatureFlag]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Scrollbar
+        noDefaultStyles={false}
+        noScroll={false}
+        style={{ height: 200, width: 200, marginTop: 30 }}
+        thumbYProps={{ className: "thumbY" }}
+        trackXProps={{ className: "trackX" }}
+      >
+        <p>Hello world!</p>
+      </Scrollbar>
+      <DataPicker />
+      <AppBar />
+      <DetailsBlock />
+      <Button />
+      {toggleFeatureFlag && <CustomForm />}
+      <SignupForm />
+      {platform === PlatformTypes.Desktop && <QuillEditor />} */}
+      <CardsContainer />
     </div>
   );
 }

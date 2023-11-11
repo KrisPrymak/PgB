@@ -1,0 +1,1 @@
+export { ReactComponent as PiggyBank } from './piggy-bank.svg';
