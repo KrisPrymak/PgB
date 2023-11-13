@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Scrollbar
+      <Scrollbar
         noDefaultStyles={false}
         noScroll={false}
         style={{ height: 200, width: 200, marginTop: 30 }}
@@ -52,8 +52,8 @@ function App() {
       <Button />
       {toggleFeatureFlag && <CustomForm />}
       <SignupForm />
-      {platform === PlatformTypes.Desktop && <QuillEditor />} */}
-      <CardsContainer />
+      {platform === PlatformTypes.Desktop && <QuillEditor />}
+      {/* <CardsContainer /> */}
     </div>
   );
 }
