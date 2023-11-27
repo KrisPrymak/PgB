@@ -1,24 +1,14 @@
-// import { AppBar } from './components/AppBar/AppBar';
-// import { DetailsBlock } from './components/DetailsBlock/DetailsBlock';
-// import { Button } from './components/Button/Button';
-// import { CustomForm } from './components/CustomForm/CustomForm';
-// import { SignupForm } from './components/Formik';
-
-import {
-  AppBar,
-  Button,
-  CustomForm,
-  DetailsBlock,
-  SignupForm,
-  DataPicker,
-} from "./components";
-import "./App.scss";
-import QuillEditor from "./components/QuillEditor/QuillEditor";
+import { IntlProvider} from "react-intl";
 import { usePlatform } from "./shared/hooks";
-import { PlatformTypes } from "./shared/hooks/types";
 import { useEffect, useState } from "react";
-import { Scrollbar } from "react-scrollbars-custom";
-import { CardsContainer } from "./components/CardsContainer";
+import { DiagonalLayout } from "./components/DiagonalLayout";
+import { CustomForm, SignupForm } from "./components";
+import { PlatformTypes } from "./shared/hooks/types";
+import QuillEditor from "./components/QuillEditor/QuillEditor";
+
+const messagesInRu = {
+  myMesage: "My message",
+};
 
 function App() {
   const platform = usePlatform();
@@ -36,8 +26,9 @@ function App() {
   }, [toggleFeatureFlag]);
 
   return (
-    <div className="App">
-      <Scrollbar
+    <IntlProvider messages={messagesInRu} locale="ru" defaultLocale="en">
+      <div className="App">
+        {/* <Scrollbar
         noDefaultStyles={false}
         noScroll={false}
         style={{ height: 200, width: 200, marginTop: 30 }}
@@ -50,11 +41,17 @@ function App() {
       <AppBar />
       <DetailsBlock />
       <Button />
-      {toggleFeatureFlag && <CustomForm />}
+      toggleFeatureFlag && <CustomForm />
       <SignupForm />
       {platform === PlatformTypes.Desktop && <QuillEditor />}
       {/* <CardsContainer /> */}
-    </div>
+      {/* <LsSs /> */}
+      <DiagonalLayout />
+      {toggleFeatureFlag && <CustomForm />}
+      <SignupForm />
+      {platform === PlatformTypes.Desktop && <QuillEditor />}
+      </div>
+    </IntlProvider>
   );
 }
 

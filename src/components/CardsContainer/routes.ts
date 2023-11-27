@@ -1,0 +1,12 @@
+export const ROUTE_REGISTRATION = 'registration';
+export const ROUTE_LOGIN = 'login';
+export const ROUTE_HOME = '/home';
+export const ROUTE_ABOUT_COMPANY = '/about-company';
+export const ROUTE_POLICY_PROCEDURES = '/policy-procedures';
+export const ROUTE_POLICY = '/policy-procedures/policy';
+export const ROUTE_POLICY_ARTICLE = '/policy-procedures/policy/article';
+export const ROUTE_LINKS = '/links';
+export const ROUTE_HR_VACANCY = '/hr-vacancy';
+export const ROUTE_TEAM = '/team';
+export const ROUTE_NEED_TO = '/need-to';
+export const ROUTE_ACCOUNT = '/account';
