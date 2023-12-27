@@ -1,0 +1,28 @@
+@import '../../shared/styles/colors.scss';
+
+.home {
+    background-color: $background;
+    border-radius: 5px;
+    padding: 24px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: $shadow;
+    padding: 12px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-shadow: 1px 1px 1px $background;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.navList {
+    display: flex;
+}

@@ -3,7 +3,7 @@ import './index.scss';
 import { RoutesApp } from './Routes';
 import { StrictMode } from 'react';
 import { IntlProvider } from 'react-intl';
-import { Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const messagesInRu = {
     myMesage: "My message",

@@ -1,18 +1,19 @@
-// import { Route, Routes } from 'react-router-dom';
-
+import { Home } from "./routes/home";
 import App from "./App";
-import { AppBar, Button, DataPicker, DetailsBlock } from "./components";
-import { CardsContainer } from "./components/CardsContainer";
 import { LsSs } from "./components/LsSs";
 import { NotFound } from "./components/NotFound";
 import { Route, Routes } from "react-router-dom";
 import { Scrollbar } from "react-scrollbars-custom";
+import { Group } from "./routes/group/group";
 
 export const RoutesApp = () => {
   return (
     <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="group" element={<Group />} />
+      <Route path="localStorage" element={<LsSs />} />
       <Route
-        path="/"
+        path="qq"
         element={
           <Scrollbar
             noDefaultStyles={false}
@@ -25,14 +26,7 @@ export const RoutesApp = () => {
           </Scrollbar>
         }
       />
-      <Route path={"d"} element={<DataPicker />} />
-      <Route path={"q"} element={<AppBar />} />
-      <Route path={"e"} element={<DetailsBlock />} />
-      <Route path={"w"} element={<Button />} />
-      <Route path="/" element={<App />}>
-        <Route element={<CardsContainer />} />
-        <Route path={"q"} element={<LsSs />} />
-      </Route>
+      <Route path="33" element={<App />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

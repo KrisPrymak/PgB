@@ -1,0 +1,16 @@
+@import '../../shared/styles/colors.scss';
+
+.card {
+    width: calc(25% - 12px);
+    border: 1px solid $border;
+    padding: 8px;
+}
+
+.list {
+    padding: 0 52px;
+}
+
+.listItem {
+    display: flex;
+    justify-content: space-between;
+}

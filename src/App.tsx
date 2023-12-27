@@ -46,7 +46,7 @@ function App() {
       {platform === PlatformTypes.Desktop && <QuillEditor />}
       {/* <CardsContainer /> */}
       {/* <LsSs /> */}
-      <DiagonalLayout />
+      {/* <DiagonalLayout /> */}
       {toggleFeatureFlag && <CustomForm />}
       <SignupForm />
       {platform === PlatformTypes.Desktop && <QuillEditor />}
